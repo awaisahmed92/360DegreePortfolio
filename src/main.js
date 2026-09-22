@@ -1,178 +1,202 @@
 /**
  * main.js
- * Application logic for x360Degree Inc. Corporate Website
+ * 360techx Portfolio Site — Application Logic
  */
 import './styles/main.css';
 import './styles/company.css';
-import { companyProducts, clientIndustries, clientTestimonials } from './data/productsData.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
+  initNavbar();
   initMobileMenu();
-  initCostEstimator();
   initModals();
   initContactForm();
+  initSmoothScroll();
 });
 
-/* =========================================================================
+/* ==========================================================================
    1. THEME TOGGLE (LIGHT / DARK)
-   ========================================================================= */
+   ========================================================================== */
 function initThemeToggle() {
-  const themeBtn = document.getElementById('theme-toggle');
-  if (!themeBtn) return;
+  const btn = document.getElementById('theme-toggle');
+  if (!btn) return;
 
-  const currentTheme = localStorage.getItem('theme') || 'light';
-  document.documentElement.setAttribute('data-theme', currentTheme);
-  updateThemeIcon(themeBtn, currentTheme);
+  const saved = localStorage.getItem('360tx-theme') || 'light';
+  applyTheme(saved, btn);
 
-  themeBtn.addEventListener('click', () => {
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-    const nextTheme = isDark ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', nextTheme);
-    localStorage.setItem('theme', nextTheme);
-    updateThemeIcon(themeBtn, nextTheme);
+  btn.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme');
+    const next = current === 'dark' ? 'light' : 'dark';
+    applyTheme(next, btn);
+    localStorage.setItem('360tx-theme', next);
   });
 }
 
-function updateThemeIcon(btn, theme) {
-  btn.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+function applyTheme(theme, btn) {
+  document.documentElement.setAttribute('data-theme', theme);
+  btn.textContent = theme === 'dark' ? '☀️' : '🌙';
   btn.title = theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode';
 }
 
-/* =========================================================================
-   2. MOBILE NAVIGATION MENU
-   ========================================================================= */
+/* ==========================================================================
+   2. NAVBAR — SCROLL SHADOW & ACTIVE STATE
+   ========================================================================== */
+function initNavbar() {
+  const navbar = document.querySelector('.site-navbar');
+  if (!navbar) return;
+
+  const handleScroll = () => {
+    if (window.scrollY > 16) {
+      navbar.classList.add('nav-scrolled');
+    } else {
+      navbar.classList.remove('nav-scrolled');
+    }
+  };
+
+  window.addEventListener('scroll', handleScroll, { passive: true });
+  handleScroll();
+
+  // Highlight active nav link based on scroll position
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  if (!sections.length || !navLinks.length) return;
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => {
+            link.classList.toggle(
+              'nav-link-active',
+              link.getAttribute('href') === `#${entry.target.id}`
+            );
+          });
+        }
+      });
+    },
+    { rootMargin: '-40% 0px -55% 0px' }
+  );
+
+  sections.forEach((s) => observer.observe(s));
+}
+
+/* ==========================================================================
+   3. MOBILE NAVIGATION
+   ========================================================================== */
 function initMobileMenu() {
-  const menuBtn = document.getElementById('mobile-menu-toggle');
+  const btn = document.getElementById('mobile-menu-toggle');
   const navLinks = document.querySelector('.nav-links');
-  if (!menuBtn || !navLinks) return;
+  if (!btn || !navLinks) return;
 
-  menuBtn.addEventListener('click', () => {
-    const isOpen = navLinks.style.display === 'flex';
-    navLinks.style.display = isOpen ? 'none' : 'flex';
-    navLinks.style.flexDirection = 'column';
-    navLinks.style.position = 'absolute';
-    navLinks.style.top = '76px';
-    navLinks.style.left = '0';
-    navLinks.style.width = '100%';
-    navLinks.style.background = 'var(--bg-surface)';
-    navLinks.style.padding = '24px';
-    navLinks.style.boxShadow = 'var(--shadow-lg)';
+  btn.addEventListener('click', () => {
+    const open = navLinks.classList.toggle('open');
+    btn.textContent = open ? '✕' : '☰';
+    btn.setAttribute('aria-expanded', String(open));
   });
-}
 
-/* =========================================================================
-   3. INTERACTIVE PROJECT COST & SCOPE ESTIMATOR
-   ========================================================================= */
-function initCostEstimator() {
-  const container = document.getElementById('project-cost-estimator');
-  if (!container) return;
-
-  const typeBtns = container.querySelectorAll('.est-type-btn');
-  const checkboxes = container.querySelectorAll('.est-feature-checkbox');
-  const platformRadios = container.querySelectorAll('input[name="est-platform"]');
-  const timelineSelect = container.querySelector('#est-timeline');
-
-  const priceEl = document.getElementById('est-calculated-price');
-  const durationEl = document.getElementById('est-calculated-duration');
-
-  let basePrice = 6500;
-  let multiplier = 1.0;
-
-  function calculateEstimate() {
-    let total = basePrice;
-
-    // Checkboxes additions
-    checkboxes.forEach(cb => {
-      if (cb.checked) {
-        total += parseInt(cb.dataset.price || 0);
-      }
-    });
-
-    // Platform additions
-    platformRadios.forEach(rad => {
-      if (rad.checked) {
-        multiplier = parseFloat(rad.dataset.multiplier || 1.0);
-      }
-    });
-
-    const finalTotal = Math.round(total * multiplier);
-    const weeks = Math.max(4, Math.round(finalTotal / 2200));
-
-    if (priceEl) {
-      priceEl.textContent = `$${finalTotal.toLocaleString()}`;
-    }
-    if (durationEl) {
-      durationEl.textContent = `~ ${weeks} to ${weeks + 2} Weeks`;
-    }
-  }
-
-  typeBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      typeBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      basePrice = parseInt(btn.dataset.basePrice || 6500);
-      calculateEstimate();
+  // Close menu when a link is clicked
+  navLinks.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
     });
   });
 
-  checkboxes.forEach(cb => cb.addEventListener('change', calculateEstimate));
-  platformRadios.forEach(rad => rad.addEventListener('change', calculateEstimate));
-  if (timelineSelect) timelineSelect.addEventListener('change', calculateEstimate);
-
-  calculateEstimate();
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !btn.contains(e.target)) {
+      navLinks.classList.remove('open');
+      btn.textContent = '☰';
+      btn.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
-/* =========================================================================
-   4. MODAL SYSTEM (SCHEDULE DEMO / GET QUOTE)
-   ========================================================================= */
+/* ==========================================================================
+   4. MODAL SYSTEM
+   ========================================================================== */
 function initModals() {
   const modal = document.getElementById('consultation-modal');
-  const openBtns = document.querySelectorAll('[data-open-modal="consultation"]');
-  const closeBtn = document.getElementById('close-consultation-modal');
-
   if (!modal) return;
 
-  openBtns.forEach(btn => {
+  // Open via data-open-modal attribute
+  document.querySelectorAll('[data-open-modal="consultation"]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('active');
+      openModal(modal);
     });
   });
 
+  // Close button
+  const closeBtn = document.getElementById('modal-close-btn');
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-    });
+    closeBtn.addEventListener('click', () => closeModal(modal));
   }
 
+  // Close on backdrop click
   modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
+    if (e.target === modal) closeModal(modal);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.classList.contains('active')) {
+      closeModal(modal);
     }
   });
 }
 
-/* =========================================================================
-   5. CONTACT / CONSULTATION FORM SUBMISSION
-   ========================================================================= */
+function openModal(modal) {
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(modal) {
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+/* ==========================================================================
+   5. CONTACT FORM SUBMISSION
+   ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('consultation-form');
-  const successMsg = document.getElementById('consultation-success');
-
+  const successEl = document.getElementById('form-success');
   if (!form) return;
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
+
     const submitBtn = form.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
-      submitBtn.textContent = 'Submitting Request...';
+      submitBtn.textContent = 'Submitting…';
     }
 
+    // Simulate async submission (replace with real fetch/API call)
     setTimeout(() => {
       form.style.display = 'none';
-      if (successMsg) successMsg.style.display = 'block';
-    }, 1000);
+      if (successEl) successEl.style.display = 'block';
+    }, 900);
+  });
+}
+
+/* ==========================================================================
+   6. SMOOTH SCROLL for anchor links
+   ========================================================================== */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener('click', (e) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      const navHeight = parseInt(
+        getComputedStyle(document.documentElement).getPropertyValue('--nav-height') || '72'
+      );
+      const top = target.getBoundingClientRect().top + window.scrollY - navHeight - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    });
   });
 }
