@@ -3,6 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, sans-serif; background: #f8fafc; color: #0f172a; }
+    .site-header { position: sticky; top: 0; z-index: 1000; background: #fff; }
+    .announcement-bar { background: #2563eb; color: #fff; text-align: center; padding: 8px 16px; font-size: 0.8rem; }
+    .announcement-bar a { color: #fff; font-weight: 700; }
+    .nav-content, .brand-group { display: flex; align-items: center; }
+    .nav-content { justify-content: space-between; gap: 16px; max-width: 1200px; margin: 0 auto; padding: 10px 24px; }
+    .brand-group { gap: 10px; text-decoration: none; color: inherit; }
+    .brand-logo { width: 48px; height: 48px; display: block; }
+    .brand-text-name { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.04em; }
+    .brand-text-name span { color: #2563eb; }
+    .nav-links { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+    .nav-link { text-decoration: none; color: #475569; font-weight: 500; }
+    .hero-stage { background: #12124a url("/hero-banner.webp") center / cover no-repeat; color: #fff; min-height: 70vh; }
+    .hero-rotator { position: relative; display: block; height: 1.4em; overflow: hidden; }
+    .hero-phrase { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; }
+    .hero-phrase.is-on { opacity: 1; }
+    .hero-visual { position: relative; min-height: 280px; }
+    .hero-shot { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; }
+    .hero-shot.is-on { opacity: 1; }
+    .footer-brand-name span { color: #93c5fd; }
+  </style>
 
   <!-- ===== SEO Title & Description ===== -->
   <title>360techx | CRM · HRM · ERP · FMS Enterprise Software Suite</title>
@@ -33,7 +55,7 @@
   <!-- ===== Google Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
   <!-- ===== JSON-LD Structured Data ===== -->
   <script type="application/ld+json">
