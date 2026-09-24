@@ -4,6 +4,7 @@
  */
 import './styles/main.css';
 import './styles/company.css';
+import { initChatbot } from './chatbot.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
@@ -12,7 +13,40 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initContactForm();
   initSmoothScroll();
+  initChatbot();
+  initHeroPhrases();
+  initHeroShots();
 });
+
+function initHeroPhrases() {
+  const phrases = document.querySelectorAll('.hero-phrase');
+  if (phrases.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let index = 0;
+  window.setInterval(() => {
+    const current = phrases[index];
+    current.classList.remove('is-on');
+    current.classList.add('is-out');
+    index = (index + 1) % phrases.length;
+    phrases[index].classList.remove('is-out');
+    phrases[index].classList.add('is-on');
+    window.setTimeout(() => current.classList.remove('is-out'), 600);
+  }, 2800);
+}
+
+function initHeroShots() {
+  const shots = document.querySelectorAll('.hero-shot');
+  if (shots.length < 2) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  let index = 0;
+  window.setInterval(() => {
+    shots[index].classList.remove('is-on');
+    index = (index + 1) % shots.length;
+    shots[index].classList.add('is-on');
+  }, 3200);
+}
 
 /* ==========================================================================
    1. THEME TOGGLE (LIGHT / DARK)

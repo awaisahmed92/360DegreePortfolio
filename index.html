@@ -28,7 +28,7 @@
   <meta name="theme-color" content="#2563eb">
 
   <!-- ===== Favicon ===== -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text y='.85em' x='50%' text-anchor='middle' font-size='52' font-weight='900' fill='white' font-family='system-ui'>360</text></svg>">
+  <link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
 
   <!-- ===== Google Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -87,24 +87,19 @@
   <!-- =====================================================================
        ANNOUNCEMENT BAR
        ===================================================================== -->
+  <header class="site-header" role="banner">
   <div class="announcement-bar">
     🚀 Introducing <strong>Accounts360techx</strong> — Full Financial Management &amp; Accounting ERP.
     <a href="https://accounts360techx.com" target="_blank" rel="noopener">Explore Now →</a>
   </div>
 
-  <!-- =====================================================================
-       NAVBAR
-       ===================================================================== -->
-  <header class="site-navbar" role="banner">
+  <div class="site-navbar">
     <div class="container nav-content">
 
       <!-- Brand -->
       <a href="#" class="brand-group" aria-label="360techx Home">
-        <div class="brand-logo" aria-hidden="true">360</div>
-        <div>
-          <div class="brand-text-name"><span>360</span>techx</div>
-          <div class="brand-text-tagline">Enterprise Software Suite</div>
-        </div>
+        <img class="brand-logo" src="/logo-mark.svg?v=4" alt="" width="48" height="48">
+        <span class="brand-text-name"><span>360</span>TECHX</span>
       </a>
 
       <!-- Desktop Nav -->
@@ -123,7 +118,7 @@
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark/light mode">🌙</button>
 
         <!-- Product quick-links (hidden on small screens) -->
-        <div class="nav-product-btns" style="display:flex; gap:8px;">
+        <div class="nav-product-btns">
           <a href="https://hr360techx.com" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">
             👥 HR360techx
           </a>
@@ -139,73 +134,41 @@
         <button class="mobile-menu-btn" id="mobile-menu-toggle" aria-label="Toggle mobile menu" aria-expanded="false">☰</button>
       </div>
     </div>
+  </div>
   </header>
 
   <!-- =====================================================================
        HERO SECTION
        ===================================================================== -->
-  <section class="hero-section" id="home">
-    <div class="container hero-content">
-
-      <!-- Suite Keyword Pills -->
-      <div class="suite-pills" aria-label="Software suite categories">
-        <span class="suite-pill crm">🤝 CRM</span>
-        <span class="suite-pill hrm">👥 HRM</span>
-        <span class="suite-pill erp">🏗️ ERP</span>
-        <span class="suite-pill fms">📊 FMS</span>
-        <span class="suite-pill fms" style="color:#6366f1; border-color:rgba(99,102,241,0.35); background:rgba(99,102,241,0.07);">💼 Financial Management System</span>
-      </div>
-
-      <!-- Headline -->
-      <h1 class="hero-title">
-        All-in-One Enterprise Suite for<br>
-        <span class="gradient-text">Growing Businesses</span>
-      </h1>
-
-      <!-- Subtitle -->
-      <p class="hero-subtitle">
-        360techx delivers powerful <strong>CRM, HRM, ERP &amp; FMS</strong> software products.
-        Manage your people, finances, and operations from a single trusted platform —
-        built for speed, compliance, and scale.
-      </p>
-
-      <!-- CTA Buttons -->
-      <div class="hero-cta-group">
-        <a href="https://hr360techx.com" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
-          👥 Explore HR360techx
-        </a>
-        <a href="https://accounts360techx.com" target="_blank" rel="noopener" class="btn btn-teal btn-lg">
-          📊 Explore Accounts360techx
-        </a>
-        <button class="btn btn-secondary btn-lg" data-open-modal="consultation">
-          📅 Book Free Demo
-        </button>
-      </div>
-
-      <!-- Trust Bar -->
-      <div class="trust-bar" role="list" aria-label="Trust indicators">
-        <div class="trust-item" role="listitem">
-          <span class="trust-check">✓</span>
-          <span>US-Registered Entity</span>
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check">✓</span>
-          <span>SOC 2 Type II Ready</span>
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check">✓</span>
-          <span>250+ Enterprise Deployments</span>
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check">✓</span>
-          <span>99.99% Cloud Uptime SLA</span>
-        </div>
-        <div class="trust-item" role="listitem">
-          <span class="trust-check">✓</span>
-          <span>CRM · HRM · ERP · FMS</span>
+  <section class="hero-section hero-stage" id="home">
+    <div class="container hero-layout">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          <span class="hero-fixed">Helping you</span>
+          <span class="hero-rotator" aria-live="polite">
+            <span class="hero-phrase is-on">run payroll and HR</span>
+            <span class="hero-phrase">close the books</span>
+            <span class="hero-phrase">manage schools and fees</span>
+            <span class="hero-phrase">sell at every counter</span>
+          </span>
+        </h1>
+        <p class="hero-subtitle">
+          360techx connects HR, accounts, school, retail, and operations so your teams work from one system instead of scattered tools.
+        </p>
+        <div class="hero-cta-group">
+          <button class="btn btn-primary btn-lg" data-open-modal="consultation">Book a Demo</button>
+          <a href="#products" class="btn btn-hero-ghost btn-lg">View our systems</a>
         </div>
       </div>
-
+      <div class="hero-visual" aria-hidden="true">
+        <div class="screen screen-back"></div>
+        <div class="screen screen-mid"></div>
+        <div class="screen screen-front">
+          <img class="hero-shot is-on" src="/hr-dashboard.png" alt="">
+          <img class="hero-shot" src="/payroll-run.png" alt="">
+          <img class="hero-shot" src="/finance-dashboard.png" alt="">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -217,152 +180,51 @@
 
       <div class="section-header">
         <span class="section-tag">Our Flagship Products</span>
-        <h2 class="section-title">Two Powerful Products. One Complete Enterprise Suite.</h2>
+        <h2 class="section-title">Software for every part of the business</h2>
         <p class="section-desc">
-          Manage your entire workforce with <strong>HR360techx</strong> (HRM) and keep your finances
-          perfectly in order with <strong>Accounts360techx</strong> (FMS / ERP).
+          HR360techx and Accounts360techx lead the suite. The same team also delivers school, retail, and operations systems.
         </p>
       </div>
 
-      <div class="products-showcase">
-
-        <!-- ── Product 1: HR360techx ── -->
-        <article class="product-card blue" aria-labelledby="hr-product-title">
-          <div class="product-card-head">
-            <div class="product-icon-wrap blue" aria-hidden="true">👥</div>
-            <div class="product-card-meta">
-              <span class="product-badge blue">HRM · Payroll · Attendance</span>
-              <a href="https://hr360techx.com" target="_blank" rel="noopener" class="product-url-chip blue">
-                🔗 hr360techx.com
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="product-card-title" id="hr-product-title">HR360techx</h3>
-            <p class="product-card-tagline" style="font-size:0.82rem; color:var(--color-primary); font-weight:600; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.04em;">
-              Human Resource Management System (HRM)
-            </p>
-            <p class="product-card-tagline">
-              An all-in-one HRMS that automates payroll, attendance, leave management, and
-              the complete employee lifecycle — from recruitment to retirement.
-            </p>
-          </div>
-
-          <ul class="product-features" aria-label="HR360techx key features">
-            <li class="product-feature-item">
-              <span class="feature-dot blue" aria-hidden="true"></span>
-              Automated gross-to-net payroll with ACH/NACHA direct deposit
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot blue" aria-hidden="true"></span>
-              Biometric &amp; GPS-based attendance and shift scheduling
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot blue" aria-hidden="true"></span>
-              Leave &amp; PTO approval workflows with holiday calendars
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot blue" aria-hidden="true"></span>
-              Employee self-service portal — payslips, tax forms &amp; requests
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot blue" aria-hidden="true"></span>
-              Recruitment, onboarding &amp; statutory compliance reports
-            </li>
-          </ul>
-
-          <div class="product-stats-3" role="list" aria-label="HR360techx statistics">
-            <div class="stat-item blue-bg" role="listitem">
-              <div class="stat-value blue">−85%</div>
-              <div class="stat-label">Payroll Processing Time</div>
-            </div>
-            <div class="stat-item blue-bg" role="listitem">
-              <div class="stat-value blue">100%</div>
-              <div class="stat-label">Tax Accuracy</div>
-            </div>
-            <div class="stat-item blue-bg" role="listitem">
-              <div class="stat-value blue">94%</div>
-              <div class="stat-label">Employee Self-Service</div>
-            </div>
-          </div>
-
-          <a href="https://hr360techx.com" target="_blank" rel="noopener"
-             class="btn btn-primary btn-card-cta"
-             aria-label="Explore HR360techx at hr360techx.com">
-            👥 Explore HR360techx →
-          </a>
-        </article>
-
-        <!-- ── Product 2: Accounts360techx ── -->
-        <article class="product-card teal" aria-labelledby="accounts-product-title">
-          <div class="product-card-head">
-            <div class="product-icon-wrap teal" aria-hidden="true">📊</div>
-            <div class="product-card-meta">
-              <span class="product-badge teal">FMS · ERP · Accounting</span>
-              <a href="https://accounts360techx.com" target="_blank" rel="noopener" class="product-url-chip teal">
-                🔗 accounts360techx.com
-              </a>
-            </div>
-          </div>
-
-          <div>
-            <h3 class="product-card-title" id="accounts-product-title">Accounts360techx</h3>
-            <p class="product-card-tagline" style="font-size:0.82rem; color:var(--color-teal); font-weight:600; margin-bottom:6px; text-transform:uppercase; letter-spacing:0.04em;">
-              Financial Management System (FMS) &amp; Accounting ERP
-            </p>
-            <p class="product-card-tagline">
-              A comprehensive FMS &amp; ERP that handles your full financial lifecycle —
-              from invoicing and bank reconciliation to real-time P&amp;L and tax compliance.
-            </p>
-          </div>
-
-          <ul class="product-features" aria-label="Accounts360techx key features">
-            <li class="product-feature-item">
-              <span class="feature-dot teal" aria-hidden="true"></span>
-              Chart of Accounts &amp; double-entry bookkeeping engine
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot teal" aria-hidden="true"></span>
-              Accounts Receivable (AR) &amp; Accounts Payable (AP) automation
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot teal" aria-hidden="true"></span>
-              Bank reconciliation with automated statement import
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot teal" aria-hidden="true"></span>
-              Real-time P&amp;L, Balance Sheet &amp; Cash Flow statements
-            </li>
-            <li class="product-feature-item">
-              <span class="feature-dot teal" aria-hidden="true"></span>
-              GST, VAT &amp; multi-currency tax compliance reporting
-            </li>
-          </ul>
-
-          <div class="product-stats-3" role="list" aria-label="Accounts360techx statistics">
-            <div class="stat-item teal-bg" role="listitem">
-              <div class="stat-value teal">4× Faster</div>
-              <div class="stat-label">Invoice Processing</div>
-            </div>
-            <div class="stat-item teal-bg" role="listitem">
-              <div class="stat-value teal">99.9%</div>
-              <div class="stat-label">Reconciliation Accuracy</div>
-            </div>
-            <div class="stat-item teal-bg" role="listitem">
-              <div class="stat-value teal">−70%</div>
-              <div class="stat-label">Financial Close Time</div>
-            </div>
-          </div>
-
-          <a href="https://accounts360techx.com" target="_blank" rel="noopener"
-             class="btn btn-teal btn-card-cta"
-             aria-label="Explore Accounts360techx at accounts360techx.com">
-            📊 Explore Accounts360techx →
-          </a>
-        </article>
-
-      </div><!-- /products-showcase -->
+      <div class="offer-grid">
+        <a class="offer-card offer-card--flag" href="https://hr360techx.com" target="_blank" rel="noopener">
+          <span class="offer-flag">Flagship</span>
+          <span class="offer-mark">HR</span>
+          <strong>HR360techx</strong>
+          <p>Payroll, attendance, leave, and the employee record from hire to exit.</p>
+          <span class="offer-link">hr360techx.com →</span>
+        </a>
+        <a class="offer-card" href="https://accounts360techx.com" target="_blank" rel="noopener">
+          <span class="offer-mark offer-mark--teal">AC</span>
+          <strong>Accounts360techx</strong>
+          <p>Ledgers, invoicing, bank reconciliation, and live financial statements.</p>
+          <span class="offer-link">accounts360techx.com →</span>
+        </a>
+        <a class="offer-card" href="#products">
+          <span class="offer-mark">SC</span>
+          <strong>School Management</strong>
+          <p>Admissions, fees, staff, and academic records for schools.</p>
+          <span class="offer-link">View system →</span>
+        </a>
+        <a class="offer-card" href="#products">
+          <span class="offer-mark">POS</span>
+          <strong>Point of Sale</strong>
+          <p>Checkout, receipts, and stock sync for shops and branches.</p>
+          <span class="offer-link">View system →</span>
+        </a>
+        <a class="offer-card" href="#products">
+          <span class="offer-mark">ERP</span>
+          <strong>Enterprise Resource Planning</strong>
+          <p>Finance, procurement, inventory, and HR in one connected system.</p>
+          <span class="offer-link">View system →</span>
+        </a>
+        <a class="offer-card" href="#products">
+          <span class="offer-mark">INV</span>
+          <strong>Inventory Management</strong>
+          <p>Warehouses, stock movement, and reorder levels.</p>
+          <span class="offer-link">View system →</span>
+        </a>
+      </div>
     </div>
   </section>
 
@@ -657,11 +519,8 @@
         <!-- Col 1: About -->
         <div>
           <div class="brand-group" style="margin-bottom:16px;">
-            <div class="brand-logo" aria-hidden="true">360</div>
-            <div>
-              <div class="footer-brand-name"><span>360</span>techx</div>
-              <div class="brand-text-tagline">Enterprise Software Suite</div>
-            </div>
+            <img class="brand-logo" src="/logo-mark.svg?v=4" alt="" width="48" height="48">
+            <span class="footer-brand-name"><span>360</span>TECHX</span>
           </div>
           <p class="footer-desc">
             Delivering enterprise CRM, HRM, ERP &amp; FMS software products for businesses worldwide.
@@ -777,6 +636,8 @@
               <option value="hr">HR360techx — HR &amp; Payroll (HRM)</option>
               <option value="accounts">Accounts360techx — Financial Management (FMS / ERP)</option>
               <option value="both">Both Products — Full Enterprise Suite</option>
+              <option value="pos">POS — Retail &amp; Supermarket</option>
+              <option value="school">School Management</option>
               <option value="crm">CRM Solution</option>
               <option value="custom">Custom Development</option>
             </select>
