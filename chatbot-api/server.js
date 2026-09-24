@@ -10,7 +10,7 @@ const app = express();
 const port = process.env.PORT || 8000;
 const dataDir = path.join(__dirname, "data");
 
-const allowedOrigins = (process.env.CORS_ORIGINS ||
+const allowedOrigins = (process.env.CORS_ORIGINS || process.env.ALLOWED_ORIGINS ||
   "http://localhost:5173,http://127.0.0.1:5173,http://localhost:5174,http://127.0.0.1:5174,https://360techx.com,https://www.360techx.com")
   .split(",")
   .map((origin) => origin.trim())

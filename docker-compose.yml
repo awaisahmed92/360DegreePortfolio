@@ -1,0 +1,18 @@
+services:
+  chatbot-api:
+    build:
+      context: ./chatbot-api
+    container_name: chatbot-api
+    restart: unless-stopped
+    env_file:
+      - ./chatbot-api/.env
+    environment:
+      PORT: "8000"
+      CORS_ORIGINS: "https://360techx.com,https://www.360techx.com"
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      - chatbot_data:/app/data
+
+volumes:
+  chatbot_data:

@@ -14,7 +14,7 @@ function apiBase() {
   }
   const host = location.hostname;
   if (host === "localhost" || host === "127.0.0.1") return "http://localhost:8000";
-  return "https://api.360techx.com";
+  return "https://360techx.com";
 }
 
 function openConsultation(product) {
