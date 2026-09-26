@@ -1,5 +1,3 @@
-import "./styles/chatbot.css";
-
 const QUICK_ACTIONS = [
   { id: "demo", label: "Book a Demo" },
   { id: "consult", label: "Free Consultation" },
@@ -9,9 +7,8 @@ const QUICK_ACTIONS = [
 ];
 
 function apiBase() {
-  if (import.meta.env.VITE_CHATBOT_API_URL) {
-    return import.meta.env.VITE_CHATBOT_API_URL.replace(/\/$/, "");
-  }
+  const configured = import.meta.env && import.meta.env.VITE_CHATBOT_API_URL;
+  if (configured) return configured.replace(/\/$/, "");
   const host = location.hostname;
   if (host === "localhost" || host === "127.0.0.1") return "http://localhost:8000";
   return "https://360techx.com";
@@ -147,7 +144,7 @@ export function initChatbot() {
     if (action.id === "services") {
       addMessage(
         "assistant",
-        "We build four systems:\n• HR360techx — payroll, attendance, and HR\n• Accounts360techx — accounting and finance\n• POS — retail checkout and stock\n• School Management — fees, staff, and academics\n\nWhich one should we look at?"
+        "We build four systems:\n• HR360techx — https://hr360techx.com\n• Accounts360techx — https://accounts360techx.com\n• School360techx — https://school360techx.com\n• POS360techx — https://pos360techx.com\n\nWhich one should we look at?"
       );
       return;
     }

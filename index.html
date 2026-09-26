@@ -16,7 +16,7 @@
     .brand-text-name span { color: #2563eb; }
     .nav-links { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
     .nav-link { text-decoration: none; color: #475569; font-weight: 500; }
-    .hero-stage { background: #12124a url("/hero-banner.webp") center / cover no-repeat; color: #fff; min-height: 70vh; }
+    .hero-stage { background: #12124a url("public/hero-banner.webp") center / cover no-repeat; color: #fff; min-height: 70vh; }
     .hero-rotator { position: relative; display: block; height: 1.4em; overflow: hidden; }
     .hero-phrase { position: absolute; left: 0; top: 0; width: 100%; opacity: 0; }
     .hero-phrase.is-on { opacity: 1; }
@@ -50,7 +50,10 @@
   <meta name="theme-color" content="#2563eb">
 
   <!-- ===== Favicon ===== -->
-  <link rel="icon" href="/logo-mark.svg" type="image/svg+xml">
+  <link rel="icon" href="public/logo-mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="src/styles/main.css">
+  <link rel="stylesheet" href="src/styles/company.css">
+  <link rel="stylesheet" href="src/styles/chatbot.css">
 
   <!-- ===== Google Fonts ===== -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,7 +71,9 @@
     "description": "360techx delivers CRM, HRM, ERP, and Financial Management System (FMS) enterprise software solutions.",
     "sameAs": [
       "https://hr360techx.com",
-      "https://accounts360techx.com"
+      "https://accounts360techx.com",
+      "https://school360techx.com",
+      "https://pos360techx.com"
     ],
     "contactPoint": {
       "@type": "ContactPoint",
@@ -98,6 +103,26 @@
             "description": "Financial Management System (FMS) — Accounting, Invoicing & Financial ERP",
             "url": "https://accounts360techx.com"
           }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "SoftwareApplication",
+            "name": "School360techx",
+            "applicationCategory": "BusinessApplication",
+            "description": "School management — admissions, fees, staff, and academic records",
+            "url": "https://school360techx.com"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "SoftwareApplication",
+            "name": "POS360techx",
+            "applicationCategory": "BusinessApplication",
+            "description": "Point of sale — checkout, receipts, and stock for shops and branches",
+            "url": "https://pos360techx.com"
+          }
         }
       ]
     }
@@ -120,7 +145,7 @@
 
       <!-- Brand -->
       <a href="#" class="brand-group" aria-label="360techx Home">
-        <img class="brand-logo" src="/logo-mark.svg?v=4" alt="" width="48" height="48">
+        <img class="brand-logo" src="public/logo-mark.svg?v=4" alt="" width="48" height="48">
         <span class="brand-text-name"><span>360</span>TECHX</span>
       </a>
 
@@ -186,9 +211,9 @@
         <div class="screen screen-back"></div>
         <div class="screen screen-mid"></div>
         <div class="screen screen-front">
-          <img class="hero-shot is-on" src="/hr-dashboard.png" alt="">
-          <img class="hero-shot" src="/payroll-run.png" alt="">
-          <img class="hero-shot" src="/finance-dashboard.png" alt="">
+          <img class="hero-shot is-on" src="public/hr-dashboard.png" alt="">
+          <img class="hero-shot" src="public/payroll-run.png" alt="">
+          <img class="hero-shot" src="public/finance-dashboard.png" alt="">
         </div>
       </div>
     </div>
@@ -222,17 +247,17 @@
           <p>Ledgers, invoicing, bank reconciliation, and live financial statements.</p>
           <span class="offer-link">accounts360techx.com →</span>
         </a>
-        <a class="offer-card" href="#products">
+        <a class="offer-card" href="https://school360techx.com" target="_blank" rel="noopener">
           <span class="offer-mark">SC</span>
-          <strong>School Management</strong>
+          <strong>School360techx</strong>
           <p>Admissions, fees, staff, and academic records for schools.</p>
-          <span class="offer-link">View system →</span>
+          <span class="offer-link">school360techx.com →</span>
         </a>
-        <a class="offer-card" href="#products">
+        <a class="offer-card" href="https://pos360techx.com" target="_blank" rel="noopener">
           <span class="offer-mark">POS</span>
-          <strong>Point of Sale</strong>
+          <strong>POS360techx</strong>
           <p>Checkout, receipts, and stock sync for shops and branches.</p>
-          <span class="offer-link">View system →</span>
+          <span class="offer-link">pos360techx.com →</span>
         </a>
         <a class="offer-card" href="#products">
           <span class="offer-mark">ERP</span>
@@ -541,7 +566,7 @@
         <!-- Col 1: About -->
         <div>
           <div class="brand-group" style="margin-bottom:16px;">
-            <img class="brand-logo" src="/logo-mark.svg?v=4" alt="" width="48" height="48">
+            <img class="brand-logo" src="public/logo-mark.svg?v=4" alt="" width="48" height="48">
             <span class="footer-brand-name"><span>360</span>TECHX</span>
           </div>
           <p class="footer-desc">
@@ -567,6 +592,8 @@
           <ul class="footer-links" aria-label="Products">
             <li><a href="https://hr360techx.com" target="_blank" rel="noopener">HR360techx (HRM)</a></li>
             <li><a href="https://accounts360techx.com" target="_blank" rel="noopener">Accounts360techx (FMS)</a></li>
+            <li><a href="https://school360techx.com" target="_blank" rel="noopener">School360techx</a></li>
+            <li><a href="https://pos360techx.com" target="_blank" rel="noopener">POS360techx</a></li>
             <li><a href="#products">Product Overview</a></li>
             <li><a href="#suite">Enterprise Suite</a></li>
           </ul>
@@ -690,7 +717,7 @@
   </div>
 
   <!-- Main JS Entry -->
-  <script type="module" src="/src/main.js"></script>
+  <script type="module" src="src/main.js"></script>
 
 </body>
 </html>

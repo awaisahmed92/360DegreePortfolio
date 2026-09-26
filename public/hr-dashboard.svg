@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" fill="none">
+  <rect width="960" height="600" rx="18" fill="#f8fafc"/>
+  <rect width="210" height="600" fill="#0f172a"/>
+  <text x="28" y="48" fill="#fff" font-family="Segoe UI, Arial" font-size="18" font-weight="700">HR360techx</text>
+  <rect x="20" y="78" width="170" height="36" rx="8" fill="#2563eb"/>
+  <text x="36" y="101" fill="#fff" font-family="Segoe UI, Arial" font-size="13">Dashboard</text>
+  <text x="36" y="150" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="13">Employees</text>
+  <text x="36" y="186" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="13">Attendance</text>
+  <text x="36" y="222" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="13">Leave</text>
+  <text x="36" y="258" fill="#94a3b8" font-family="Segoe UI, Arial" font-size="13">Payroll</text>
+  <text x="240" y="52" fill="#0f172a" font-family="Segoe UI, Arial" font-size="22" font-weight="700">People overview</text>
+  <rect x="240" y="78" width="210" height="92" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="258" y="110" fill="#64748b" font-family="Segoe UI, Arial" font-size="13">Headcount</text>
+  <text x="258" y="146" fill="#0f172a" font-family="Segoe UI, Arial" font-size="28" font-weight="700">248</text>
+  <rect x="466" y="78" width="210" height="92" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="484" y="110" fill="#64748b" font-family="Segoe UI, Arial" font-size="13">Present today</text>
+  <text x="484" y="146" fill="#0d9488" font-family="Segoe UI, Arial" font-size="28" font-weight="700">231</text>
+  <rect x="692" y="78" width="228" height="92" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="710" y="110" fill="#64748b" font-family="Segoe UI, Arial" font-size="13">On leave</text>
+  <text x="710" y="146" fill="#2563eb" font-family="Segoe UI, Arial" font-size="28" font-weight="700">17</text>
+  <rect x="240" y="190" width="680" height="370" rx="12" fill="#fff" stroke="#e2e8f0"/>
+  <text x="264" y="226" fill="#0f172a" font-family="Segoe UI, Arial" font-size="15" font-weight="700">Attendance this week</text>
+  <rect x="280" y="400" width="46" height="110" rx="6" fill="#bfdbfe"/>
+  <rect x="360" y="360" width="46" height="150" rx="6" fill="#60a5fa"/>
+  <rect x="440" y="330" width="46" height="180" rx="6" fill="#2563eb"/>
+  <rect x="520" y="350" width="46" height="160" rx="6" fill="#3b82f6"/>
+  <rect x="600" y="310" width="46" height="200" rx="6" fill="#1d4ed8"/>
+  <rect x="680" y="380" width="46" height="130" rx="6" fill="#93c5fd"/>
+  <text x="286" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Mon</text>
+  <text x="366" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Tue</text>
+  <text x="446" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Wed</text>
+  <text x="526" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Thu</text>
+  <text x="606" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Fri</text>
+  <text x="686" y="530" fill="#64748b" font-family="Segoe UI, Arial" font-size="12">Sat</text>
+</svg>

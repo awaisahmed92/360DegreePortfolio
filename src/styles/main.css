@@ -381,7 +381,7 @@ ul, ol { list-style: none; }
   padding-bottom: 64px;
   color: #f8fafc;
   background-color: #12124a;
-  background-image: url("/hero-banner.webp");
+  background-image: url("../../public/hero-banner.webp");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
