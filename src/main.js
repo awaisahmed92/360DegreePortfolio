@@ -2,8 +2,6 @@
  * main.js
  * 360techx Portfolio Site — Application Logic
  */
-import { initChatbot } from './chatbot.js';
-
 document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   initNavbar();
@@ -11,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initModals();
   initContactForm();
   initSmoothScroll();
-  initChatbot();
   initHeroPhrases();
   initHeroShots();
 });
