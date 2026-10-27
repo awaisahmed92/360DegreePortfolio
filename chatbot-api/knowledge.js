@@ -1,6 +1,6 @@
 export const FACTS = `
 360techx builds enterprise software: HR, Accounts, POS, School Management, plus CRM, ERP, and FMS.
-Contact email: contact@360techx.com. There is no public phone number on the website.
+Contact emails: info@360techx.com and support@360techx.com. There is no public phone number on the website.
 Pricing is quoted after a demo, based on modules, users, and deployment. Do not invent prices.
 A solutions expert replies to demo requests within 2–4 business hours.
 
@@ -50,7 +50,7 @@ const topics = [
   {
     keywords: ["contact", "email", "phone", "reach", "address"],
     answer:
-      "Email contact@360techx.com, or use Book a Demo on this site. A solutions expert replies within 2–4 business hours.",
+      "Email info@360techx.com or support@360techx.com, or use Book a Demo on this site. A solutions expert replies within 2–4 business hours.",
   },
 ];
 

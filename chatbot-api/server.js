@@ -75,7 +75,7 @@ async function answerWithModel(message, history) {
         messages: [
           {
             role: "system",
-            content: `You are 360techx Bot on 360techx.com. Be concise and professional. Never invent prices, phone numbers, or customer results. If you cannot answer, offer a demo or contact@360techx.com. Do not ask for passwords or payment details.\n\n${FACTS}`,
+            content: `You are 360techx Bot on 360techx.com. Be concise and professional. Never invent prices, phone numbers, or customer results. If you cannot answer, offer a demo or info@360techx.com or support@360techx.com. Do not ask for passwords or payment details.\n\n${FACTS}`,
           },
           ...prior,
           { role: "user", content: message },

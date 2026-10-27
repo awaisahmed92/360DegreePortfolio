@@ -126,7 +126,7 @@ export function initChatbot() {
         addMessage("assistant", "Request received. A solutions expert will reply within 2–4 business hours.");
       } catch {
         button.disabled = false;
-        addMessage("assistant", "I couldn’t save that request. Email contact@360techx.com and the team will pick it up.");
+        addMessage("assistant", "I couldn’t save that request. Email info@360techx.com or support@360techx.com and the team will pick it up.");
       }
     });
     messages.appendChild(card);
@@ -172,11 +172,11 @@ export function initChatbot() {
       });
       if (!response.ok) throw new Error("Chat failed");
       const data = await response.json();
-      addMessage("assistant", data.reply || "I didn’t catch that. Try Book a Demo or email contact@360techx.com.");
+      addMessage("assistant", data.reply || "I didn’t catch that. Try Book a Demo or email info@360techx.com or support@360techx.com.");
     } catch {
       addMessage(
         "assistant",
-        "I can’t reach the assistant right now. Email contact@360techx.com or use Book a Demo."
+        "I can’t reach the assistant right now. Email info@360techx.com or support@360techx.com, or use Book a Demo."
       );
     } finally {
       sendBtn.disabled = false;
